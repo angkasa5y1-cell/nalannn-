@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dwi Nawang Wulan — Portofolio TKJ</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts for Aesthetic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --paper-bg: #FAF5EE;
+      --paper-card: #FDFBF7;
+      --paper-folder: #F4ECE1;
+      --accent-red: #D33F49;
+      --accent-green: #4E8732;
+      --accent-blue: #2563EB;
+      --ink-dark: #2B231D;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #2F4F2F;
+      background-image: 
+        radial-gradient(circle at 50% 50%, rgba(76, 116, 73, 0.75), rgba(35, 61, 35, 0.95)),
+        repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 8px);
+      color: var(--ink-dark);
+      overflow-x: hidden;
+    }
+
+    .font-handwriting {
+      font-family: 'Caveat', cursive;
+    }
+
+    .font-heading {
+      font-family: 'Fredoka', cursive;
+    }
+
+    /* Paper Shadow & Texture Effects */
+    .paper-card {
+      background-color: var(--paper-card);
+      background-image: radial-gradient(#E8E2D5 0.5px, transparent 0.5px);
+      background-size: 16px 16px;
+      box-shadow: 
+        0 1px 1px rgba(0,0,0,0.08), 
+        0 8px 24px rgba(0,0,0,0.18),
+        0 16px 32px -8px rgba(0,0,0,0.22);
+      border: 1px solid rgba(210, 195, 175, 0.4);
+      position: relative;
+    }
+
+    .paper-folder {
+      background-color: var(--paper-folder);
+      box-shadow: 
+        0 12px 30px rgba(0,0,0,0.25),
+        inset 0 0 40px rgba(0,0,0,0.03);
+      border: 1px solid rgba(190, 170, 150, 0.5);
+    }
+
+    /* Sticky Tape Effect */
+    .tape {
+      background-color: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border-left: 2px dashed rgba(200, 200, 200, 0.5);
+      border-right: 2px dashed rgba(200, 200, 200, 0.5);
+    }
+
+    .tape-yellow {
+      background-color: rgba(254, 240, 138, 0.85);
+    }
+
+    .tape-pink {
+      background-color: rgba(254, 205, 211, 0.85);
+    }
+
+    .tape-green {
+      background-color: rgba(187, 247, 208, 0.85);
+    }
+
+    .tape-blue {
+      background-color: rgba(191, 219, 254, 0.85);
+    }
+
+    /* Polaroid Effect */
+    .polaroid {
+      background: white;
+      padding: 12px 12px 40px 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      border: 1px solid #eaeaea;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .polaroid:hover {
+      transform: scale(1.03) rotate(0deg) !important;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.3);
+      z-index: 30;
+    }
+
+    /* Custom Push Pin */
+    .push-pin {
+      filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+    }
+
+    /* Floating Decor Animation */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(3deg); }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .animate-float-delayed {
+      animation: float 5s ease-in-out infinite 2s;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #233d23;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #7ca97c;
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a3cda3;
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-3 sm:px-6 relative">
+
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute top-10 left-10 w-24 h-24 rounded-full bg-white/10 blur-xl animate-float"></div>
+    <div class="absolute top-1/3 right-12 w-36 h-36 rounded-full bg-blue-200/10 blur-2xl animate-float-delayed"></div>
+    <div class="absolute bottom-20 left-1/4 w-40 h-40 rounded-full bg-green-200/10 blur-2xl animate-float"></div>
+
+    <!-- Background Decorative SVG Overlay -->
+    <svg class="absolute top-4 left-4 w-48 h-48 sm:w-80 sm:h-80 opacity-15 text-emerald-200 pointer-events-none transform -rotate-12" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C13.5 4.5 16 6 19 6C21 6 22 8 22 10C22 13 19 16 15 17C14 17.25 13 17.5 12 18C11 17.5 10 17.25 9 17C5 16 2 13 2 10C2 8 3 6 5 6C8 6 10.5 4.5 12 2Z"/>
+    </svg>
+  </div>
+
+  <!-- Main Container (Scrapbook Layout) -->
+  <div class="max-w-4xl mx-auto relative z-10 space-y-10">
+    
+    <!-- SECTION 1: TOP FOLDER CARD (About Me & Contact) -->
+    <div class="paper-folder rounded-3xl p-4 sm:p-10 relative mt-6 transition-all duration-300">
+      
+      <!-- Top Folder Tab Badge -->
+      <div class="absolute -top-7 right-6 sm:right-12 bg-[#FDFBF7] px-6 py-2 rounded-t-2xl border-t border-x border-amber-900/10 shadow-md flex items-center gap-2">
+        <span class="font-handwriting text-2xl font-bold text-amber-900">About me</span>
+        <!-- Red Push Pin -->
+        <svg class="w-6 h-6 push-pin -mr-2 text-red-600 inline-block transform rotate-45" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="7" r="5" />
+          <path d="M12 12V22" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Corner Ladybug Decorative Sticker -->
+      <div class="absolute -top-4 -left-3 sm:-left-5 w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-full shadow-lg border-2 border-black flex items-center justify-center transform -rotate-12 z-30 animate-float">
+        <div class="w-full h-full relative flex items-center justify-center">
+          <div class="w-3 h-3 bg-black rounded-full absolute top-1"></div>
+          <div class="w-1.5 h-1.5 bg-black rounded-full absolute bottom-2 left-2"></div>
+          <div class="w-1.5 h-1.5 bg-black rounded-full absolute bottom-2 right-2"></div>
+          <div class="w-full h-0.5 bg-black absolute top-5"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Side: Polaroid Photo & Contact Sticky Note -->
+        <div class="md:col-span-5 flex flex-col items-center sm:items-start gap-6">
+          
+          <!-- Polaroid Photo Frame -->
+          <div class="polaroid transform -rotate-3 w-64 sm:w-72 relative group cursor-pointer">
+            <!-- Flower Clip Art on Polaroid -->
+            <div class="absolute -top-3 -left-3 z-20 text-white bg-amber-400 p-1.5 rounded-full shadow-md transform -rotate-12">
+              <i data-lucide="cpu" class="w-6 h-6 text-amber-950"></i>
+            </div>
+            
+            <div class="overflow-hidden rounded bg-amber-100 aspect-[4/5] relative">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+                alt="Dwi Nawang Wulan" 
+                class="w-full h-full object-cover filter contrast-[1.02]"
+                onerror="this.src='https://placehold.co/400x500/E8E2D5/2B231D?text=Dwi+Nawang+Wulan'"
+              />
+              <div class="absolute inset-0 bg-amber-900/10 mix-blend-multiply"></div>
+            </div>
+            
+            <div class="mt-3 text-center">
+              <p class="font-handwriting text-2xl font-bold text-stone-800">Dwi Nawang Wulan ✨</p>
+              <p class="text-[11px] text-stone-600 uppercase tracking-wider font-semibold">Teknik Komputer dan Jaringan</p>
+            </div>
+          </div>
+
+          <!-- Contact Card Sticky Note -->
+          <div class="paper-card rounded-lg p-5 w-64 sm:w-72 transform rotate-2 relative shadow-lg border border-amber-200/60 mt-1">
+            <!-- Metallic Paperclip SVG -->
+            <div class="absolute -top-4 right-6 z-20">
+              <svg class="w-8 h-12 text-slate-400 drop-shadow-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M21.5 12v6a5 5 0 01-10 0V6a3.5 3.5 0 017 0v10a2 2 0 01-4 0V8" />
+              </svg>
+            </div>
+            
+            <h4 class="font-heading text-lg font-bold text-amber-950 border-b border-dashed border-amber-300 pb-1.5 mb-3 flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-red-600"></i> Contact
+            </h4>
+            
+            <ul class="text-xs space-y-2.5 text-stone-700 font-medium">
+              <li class="flex items-center justify-between">
+                <span class="text-stone-500">Phone:</span>
+                <a href="tel:085879353175" class="hover:text-red-600 font-mono font-semibold text-stone-800">085879353175</a>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-stone-500">Email:</span>
+                <a href="mailto:dwinawangwulan51@gmail.com" class="hover:text-red-600 font-mono text-[11px] font-semibold text-stone-800">dwinawangwulan51@gmail.com</a>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-stone-500">TTL:</span>
+                <span class="font-mono font-semibold text-stone-800">5 April 2009</span>
+              </li>
+            </ul>
+
+            <!-- Mini QR Code Illustration Box (Cleaned up, no text) -->
+            <div class="mt-4 pt-3 border-t border-dashed border-amber-300 flex items-center justify-center">
+              <div class="bg-white p-2 rounded border border-amber-200 shadow-sm flex items-center justify-center">
+                <svg class="w-10 h-10 text-stone-800" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M2 2h8v8H2V2zm2 2v4h4V4H4zm11-2h8v8h-8V2zm2 2v4h4V4h-4zM2 14h8v8H2v-8zm2 2v4h4v-4H4zm13-2h2v2h-2v-2zm-2 2h2v2h-2v-2zm4 0h2v2h-2v-2zm-2 2h2v2h-2v-2zm2 2h2v2h-2v-2zm-4 0h2v2h-2v-2z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Bio & Headline -->
+        <div class="md:col-span-7 flex flex-col justify-between space-y-6 pt-2">
+          
+          <div class="space-y-4">
+            <!-- Handwritten Curly Bracket Welcome Header -->
+            <div class="flex items-start gap-2">
+              <span class="font-handwriting text-5xl sm:text-6xl text-red-600 leading-none select-none">{</span>
+              <div>
+                <span class="font-handwriting text-2xl sm:text-3xl text-amber-900 font-bold block">Hi, I'm</span>
+                <h1 class="font-heading text-3xl sm:text-5xl font-bold text-stone-900 tracking-tight leading-none mt-1">
+                  Dwi Nawang Wulan
+                </h1>
+                <p class="text-xs sm:text-sm font-semibold text-emerald-800 mt-2 bg-emerald-100/80 inline-block px-3 py-1 rounded-full border border-emerald-300">
+                  💻 Siswa Teknik Komputer dan Jaringan
+                </p>
+              </div>
+            </div>
+
+            <!-- Bio Text Paragraphs -->
+            <div class="space-y-4 text-stone-700 text-sm leading-relaxed bg-white/50 p-4 sm:p-6 rounded-2xl border border-amber-900/10 shadow-inner">
+              <p>
+                Saya adalah siswa jurusan <strong class="text-red-700 font-semibold">Teknik Komputer dan Jaringan (TKJ)</strong> yang hobi banget mengulik dunia teknologi. Selama sekolah, saya aktif belajar cara <span class="text-stone-900 font-semibold underline decoration-wavy decoration-emerald-400">merakit PC</span>, <span class="text-stone-900 font-semibold underline decoration-wavy decoration-emerald-400">mengatur jaringan lokal (LAN)</span>, sampai <span class="text-stone-900 font-semibold underline decoration-wavy decoration-emerald-400">mengatasi masalah teknis (troubleshooting)</span> pada perangkat keras maupun lunak.
+              </p>
+              <p>
+                Karena selalu penasaran dengan hal-hal baru, saya suka mencoba teknologi terkini dan melatih keterampilan teknis secara mandiri. Dengan rasa ingin tahu yang besar dan semangat pantang menyerah, saya selalu siap menghadapi tantangan baru serta terus belajar agar bisa menjadi seorang profesional IT yang bisa diandalkan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Student Simple Badges & Action Button -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-amber-900/10">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300 shadow-sm">
+                🎓 Siswa Aktif TKJ
+              </span>
+              <span class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 shadow-sm">
+                🌱 Siap Belajar & Magang
+              </span>
+            </div>
+
+            <button onclick="alert('File CV belum tersedia')" class="bg-red-600 hover:bg-red-700 text-white font-heading px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2 transform active:scale-95">
+              <i data-lucide="file-text" class="w-4 h-4"></i> Download CV
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- SECTION 2: EDUCATION & SKILLS CARD -->
+    <div class="paper-card rounded-2xl p-6 sm:p-8 relative transform -rotate-1 shadow-xl">
+      
+      <!-- Section Header Badge -->
+      <div class="flex items-center justify-between mb-6">
+        <div class="inline-block bg-red-600 text-white font-heading px-5 py-1.5 rounded-lg text-lg font-bold shadow-md transform -rotate-2">
+          Education & Skills
+        </div>
+
+        <!-- Hanging Cherries Sticker -->
+        <div class="text-red-600 animate-float">
+          <svg class="w-9 h-9 drop-shadow-md" viewBox="0 0 24 24" fill="none">
+            <path d="M7 16a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM17 18a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" fill="#D33F49"/>
+            <path d="M10 10C11 6 13 4 15 3M17 11C16 7 14 5 15 3" stroke="#4E8732" stroke-width="2" stroke-linecap="round"/>
+            <path d="M15 3c2 0 3 1 4 2" stroke="#4E8732" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: School Info -->
+        <div class="md:col-span-6 space-y-4">
+          <div class="bg-white/60 p-4 rounded-xl border border-amber-200 shadow-sm">
+            <div class="flex justify-between items-start gap-2">
+              <h3 class="font-heading font-bold text-stone-900 text-base sm:text-lg leading-snug">
+                SMK Ma'arif NU Tirto
+              </h3>
+              <span class="font-mono text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md border border-emerald-300 shrink-0">
+                2024–2027
+              </span>
+            </div>
+            <p class="text-xs sm:text-sm text-red-700 font-bold mt-1.5 flex items-center gap-1.5">
+              <i data-lucide="award" class="w-4 h-4"></i> Teknik Komputer dan Jaringan
+            </p>
+          </div>
+
+          <!-- Skill Tapes / Paper Cutout Strips (Updated Skills) -->
+          <div class="pt-2">
+            <p class="text-xs font-bold text-stone-600 mb-3 tracking-wide uppercase">Keahlian Utama:</p>
+            <div class="flex flex-wrap gap-3">
+              <div class="tape tape-yellow px-3.5 py-1.5 rounded text-xs font-bold font-heading text-stone-800 transform -rotate-2 shadow-sm border border-yellow-300 flex items-center gap-1">
+                <span>⚡</span> Network Setup
+              </div>
+              <div class="tape tape-pink px-3.5 py-1.5 rounded text-xs font-bold font-heading text-stone-800 transform rotate-2 shadow-sm border border-pink-300 flex items-center gap-1">
+                <span>🔧</span> Hardware & Software Troubleshooting
+              </div>
+              <div class="tape tape-green px-3.5 py-1.5 rounded text-xs font-bold font-heading text-stone-800 transform -rotate-1 shadow-sm border border-green-300 flex items-center gap-1">
+                <span>💻</span> Operating Systems
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Tech & Tools Badges -->
+        <div class="md:col-span-6 border-t md:border-t-0 md:border-l border-dashed border-stone-300 pt-6 md:pt-0 md:pl-8">
+          <div class="bg-stone-800 text-white px-3 py-1 rounded-md text-xs font-bold inline-block mb-4 tracking-wide">
+            Tools & Technology
+          </div>
+          
+          <div class="grid grid-cols-4 gap-3 text-center">
+            
+            <!-- MikroTik Badge -->
+            <div class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-[#1B2A38] border-2 border-[#38B6FF] rounded-xl flex items-center justify-center text-[#38B6FF] font-bold font-heading text-lg shadow-md group-hover:scale-110 transition-transform">
+                Mt
+              </div>
+              <span class="text-[10px] text-stone-600 font-semibold mt-1.5">MikroTik</span>
+            </div>
+
+            <!-- Linux Badge -->
+            <div class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-[#332500] border-2 border-[#FFC700] rounded-xl flex items-center justify-center text-[#FFC700] font-bold font-heading text-lg shadow-md group-hover:scale-110 transition-transform">
+                Lx
+              </div>
+              <span class="text-[10px] text-stone-600 font-semibold mt-1.5">Linux</span>
+            </div>
+
+            <!-- Cisco Packet Tracer Badge -->
+            <div class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-[#002B36] border-2 border-[#00B4D8] rounded-xl flex items-center justify-center text-[#00B4D8] font-bold font-heading text-lg shadow-md group-hover:scale-110 transition-transform">
+                Ci
+              </div>
+              <span class="text-[10px] text-stone-600 font-semibold mt-1.5">Cisco PT</span>
+            </div>
+
+            <!-- Windows Server / Winbox Badge -->
+            <div class="flex flex-col items-center group cursor-pointer">
+              <div class="w-12 h-12 bg-[#001D3D] border-2 border-[#4EA8DE] rounded-xl flex items-center justify-center text-[#4EA8DE] font-bold font-heading text-lg shadow-md group-hover:scale-110 transition-transform">
+                Wb
+              </div>
+              <span class="text-[10px] text-stone-600 font-semibold mt-1.5">Winbox</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Decor Ladybug Bottom Left -->
+      <div class="absolute -bottom-3 -left-3 text-red-600 transform rotate-45">
+        <svg class="w-8 h-8 drop-shadow" viewBox="0 0 24 24" fill="currentColor">
+          <circle cx="12" cy="12" r="8" fill="#D33F49" />
+          <circle cx="12" cy="6" r="3" fill="#1A1A1A" />
+          <circle cx="9" cy="11" r="1.5" fill="#1A1A1A" />
+          <circle cx="15" cy="11" r="1.5" fill="#1A1A1A" />
+          <circle cx="12" cy="16" r="1.5" fill="#1A1A1A" />
+        </svg>
+      </div>
+
+    </div>
+
+    <!-- Scrapbook Footer -->
+    <div class="pt-2 text-center pb-8">
+      <div class="inline-block paper-card px-6 py-3 rounded-2xl shadow-lg border border-amber-200/80">
+        <p class="text-xs text-stone-600 font-medium">
+          © <span id="year">2026</span> Dwi Nawang Wulan — Teknik Komputer dan Jaringan ✨
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+    
+    // Set current year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
